@@ -1,0 +1,23 @@
+{
+  "name": "uzgeeks-meetup-express",
+  "version": "0.0.1",
+  "description": "Express.js yordamida RESTful API (UzGeeks July)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebStyle/uzgeeks-meetup-express.git"
+  },
+  "keywords": [
+    "express",
+    "uzgeeks"
+  ],
+  "author": "Farrukh Mamatkhalilov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WebStyle/uzgeeks-meetup-express/issues"
+  },
+  "homepage": "https://github.com/WebStyle/uzgeeks-meetup-express#readme"
+}
