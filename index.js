@@ -1,24 +1,14 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const events = require('events');
 
-const app = express();
 const Events = new events();
 
-app.get('/', guard, (req, res) => {
-  console.log('request');
-  res.json({ message: 'Hello you are accepted' })
-});
+const client = express();
+const admin = express();
 
+require('./client/index')(client, Events);
+require('./admin/index')(admin, Events);
 
-app.get('/accept', (req, res) => {
-  Events.emit('accept');
-  res.json({ message: 'accept sent' })
-});
+client.listen(3000, () => console.log('client server is run'));
+admin.listen(3001, () => console.log('admin server is run'));
 
-function guard(req, res, next) {
-  Events.on('accept', () => next());
-}
-
-app.listen(3000, () => console.log('Server is run on port 3000'));
