@@ -11,9 +11,10 @@ module.exports = (app, events) => {
     request.save((err, result) => {
       if (err) return res.json({ message: err.message });
       req._id = result._id.toString();
-      console.log(req._id);
+      console.log('Requested client id:', req._id);
       events.on('accept', (id) => {
         if (id === req._id) {
+          console.log('Accepted client id:', req._id);
           next();
         }
       });
