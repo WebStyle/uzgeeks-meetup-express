@@ -22,6 +22,6 @@ module.exports = (app, events) => {
   });
 
   app.get('/', (req, res) => {
-    res.json({ message: 'You are accepted' });
+    res.json({ message: 'Congratulations! You are accepted' });
   });
 };
