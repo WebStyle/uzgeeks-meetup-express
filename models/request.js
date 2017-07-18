@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const RequestModel = new Schema({
+  ip: String,
   accepted: { type: Boolean, default: false },
   url: String,
   headers: Object,

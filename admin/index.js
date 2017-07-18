@@ -5,7 +5,7 @@ module.exports = (app, events) => {
    * Requests list
    */
   app.get('/', (req, res) => {
-    requestModel.find({}).exec((err, requests) => {
+    requestModel.find({ accepted: false }).exec((err, requests) => {
       if (err) return res.json({ message: err.message });
       res.json(requests);
     });

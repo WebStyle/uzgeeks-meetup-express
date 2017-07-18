@@ -1,11 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const events = require('events');
+var cors = require('cors');
 
 const Events = new events();
 
 const client = express();
 const admin = express();
+
+client.use(cors());
+admin.use(cors());
 
 mongoose.connect('mongodb://localhost:27017/RA-service');
 
